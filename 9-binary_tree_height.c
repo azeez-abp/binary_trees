@@ -1,4 +1,3 @@
-#include "binary_trees.h"
 
 /**
  * binary_tree_height - Function that measures the height of a binary tree
