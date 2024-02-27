@@ -60,6 +60,8 @@ int binary_tree_balance(const binary_tree_t *tree);
 int binary_tree_is_full(const binary_tree_t *tree);
 /*function that checks if a binary tree is perfect*/
 int binary_tree_is_perfect(const binary_tree_t *tree);
+/*function that finds the sibling of a node*/
+binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 
 /*Binary Search Tree*/
 typedef struct binary_tree_s bst_t;
