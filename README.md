@@ -8,7 +8,7 @@ Binary is a nodal non-linear data structure. This concept covers
 * What are the depth, the height, width, the size of a binary tree
 * What are the different traversal methods to go through a binary tree
 * What is a complete, a full, a perfect, a balanced binary tree
-* A some othet algorthm not included, like left view, right view, top view, bottom view and perimeter view
+* And some other algorthm not included, like left view, right view, top view, bottom view and perimeter view
 
 ## Tasks :heavy_check_mark:
 
