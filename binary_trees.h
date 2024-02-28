@@ -24,6 +24,22 @@ struct binary_tree_s
 };
 typedef struct binary_tree_s binary_tree_t;
 
+
+/*  linked list for advanced 101 the levelorder */
+/**
+ * struct link_s - structure for advanced tasks
+ *
+ * @n: depth of node specified
+ * @node: node of tree to store
+ * @next: next node of the linked list
+ */
+typedef struct link_s
+{
+	size_t n;
+	struct binary_tree_s const *node;
+	struct link_s *next;
+} link_t;
+
 /*visually represent trees*/
 void binary_tree_print(const binary_tree_t *);
 /*create new node*/
@@ -76,6 +92,8 @@ int binary_tree_is_complete(const binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 /*rotate right*/
  binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+
+
 
 typedef struct binary_tree_s bst_t;
 /*AVL Tree*/
