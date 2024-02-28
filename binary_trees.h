@@ -72,6 +72,8 @@ size_t binary_tree_leaves(const binary_tree_t *tree);
 size_t binary_tree_nodes(const binary_tree_t *tree);
 /*function that measures the balance factor of a binary tree*/
 int binary_tree_balance(const binary_tree_t *tree);
+/*function that measures the height of a binary tree for balance*/
+size_t binary_tree_height_balance(const binary_tree_t *tree);
 /*function that checks if a binary tree is full*/
 int binary_tree_is_full(const binary_tree_t *tree);
 /*function that checks if a binary tree is perfect*/
@@ -80,14 +82,8 @@ int binary_tree_is_perfect(const binary_tree_t *tree);
 binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 /* function that finds the uncle of a node*/
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
-<<<<<<< HEAD
-/*function that finds the lowest common ancestor of two nodes*/
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);
-
-/*Binary Search Tree*/
-=======
 /*Node ancestor*/
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, 
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 		const binary_tree_t *second);
 /*Go through the tree horizontally*/
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
@@ -97,11 +93,10 @@ int binary_tree_is_complete(const binary_tree_t *tree);
 /*rotate lef*/
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 /*rotate right*/
- binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 
 
 
->>>>>>> 7a59e02bde4e62bc2a3990ac030b561a933abbe4
 typedef struct binary_tree_s bst_t;
 /*AVL Tree*/
 typedef struct binary_tree_s avl_t;
