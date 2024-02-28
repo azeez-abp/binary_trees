@@ -105,7 +105,8 @@ typedef struct binary_tree_s bst_t;
 bst_t *bst_insert(bst_t **tree, int value);
 /*function that builds a Binary Search Tree from an array*/
 bst_t *array_to_bst(int *array, size_t size);
-
+/*function that searches for a value in a Binary Search Tree*/
+bst_t *bst_search(const bst_t *tree, int value);
 
 
 
