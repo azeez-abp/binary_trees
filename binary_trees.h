@@ -64,7 +64,19 @@ int binary_tree_is_perfect(const binary_tree_t *tree);
 binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 /* function that finds the uncle of a node*/
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
-/*Binary Search Tree*/
+/*Node ancestor*/
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, 
+		const binary_tree_t *second);
+/*Go through the tree horizontally*/
+void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
+
+/*Check a comlete tree all node has complete child*/
+int binary_tree_is_complete(const binary_tree_t *tree);
+/*rotate lef*/
+binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
+/*rotate right*/
+ binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+
 typedef struct binary_tree_s bst_t;
 /*AVL Tree*/
 typedef struct binary_tree_s avl_t;
