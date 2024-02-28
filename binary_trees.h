@@ -94,6 +94,12 @@ int binary_tree_is_complete(const binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 /*rotate right*/
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+/*function to check if all nodes are smaller than the root specified*/
+int check_sub_tree_Left(const binary_tree_t *node, int max);
+/*function to check if all nodes are bigger than the root specified*/
+int check_sub_tree_Right(const binary_tree_t *node, int min);
+/*unction that checks if a binary tree is a valid Binary Search Tree*/
+int binary_tree_is_bst(const binary_tree_t *tree);
 
 
 
