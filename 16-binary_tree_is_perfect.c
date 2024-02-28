@@ -2,7 +2,7 @@
 
 
 /**
- * countNode - function for counting total number of node
+ * count_node - function for counting total number of node
  * @tree: pointeer to the root
  * Return: number of node
  */
@@ -55,7 +55,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	size_t total_nodes;
 	size_t h;
 
-	total_nodes =(int) count_node(tree);
+	total_nodes = (int) count_node(tree);
 	h = (int) (1 << binary_tree_height(tree)) - 1;
 
 	if (total_nodes == h)
