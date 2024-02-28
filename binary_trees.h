@@ -100,10 +100,13 @@ int check_sub_tree_Left(const binary_tree_t *node, int max);
 int check_sub_tree_Right(const binary_tree_t *node, int min);
 /*unction that checks if a binary tree is a valid Binary Search Tree*/
 int binary_tree_is_bst(const binary_tree_t *tree);
-
-
-
 typedef struct binary_tree_s bst_t;
+/*function that inserts a value in a Binary Search Tree*/
+bst_t *bst_insert(bst_t **tree, int value);
+
+
+
+
 /*AVL Tree*/
 typedef struct binary_tree_s avl_t;
 /*Max Binary Heap*/
