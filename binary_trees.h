@@ -140,5 +140,12 @@ int binary_tree_is_heap(const binary_tree_t *tree);
 void swap_nodes(heap_t *a, heap_t *b);
 /*function that inserts a value in Max Binary Heap*/
 heap_t *heap_insert(heap_t **root, int value);
+/*array to heap*/
+heap_t *array_to_heap(int *array, size_t size);
+/*Heap extract*/
+void heapify(heap_t *root);
+/*heap to sorted array*/
+int *heap_to_sorted_array(heap_t *heap, size_t *size);
+
 
 #endif
