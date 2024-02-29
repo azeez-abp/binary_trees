@@ -5,7 +5,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdbool.h>
+#include <limits.h>
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -102,6 +102,7 @@ int check_sub_tree_Right(const binary_tree_t *node, int min);
 int binary_tree_is_bst(const binary_tree_t *tree);
 typedef struct binary_tree_s bst_t;
 /*function that inserts a value in a Binary Search Tree*/
+
 bst_t *bst_insert(bst_t **tree, int value);
 /*function that builds a Binary Search Tree from an array*/
 bst_t *array_to_bst(int *array, size_t size);
@@ -119,15 +120,16 @@ typedef struct binary_tree_s avl_t;
 int binary_tree_is_avl(const binary_tree_t *tree);
 /*Max Binary Heap*/
 typedef struct binary_tree_s heap_t;
-int bt_is_complete(const binary_tree_t *tree, size_t index,
-		size_t node_count);
-int binary_tree_is_heap_util(const binary_tree_t *tree);
-/*function that checks if a binary tree is a valid Max Binary Heap*/
-int binary_tree_is_heap(const binary_tree_t *tree);
-
-
-
-
+/*is AVL*/
+int binary_tree_is_avl(const binary_tree_t *tree);
+/*AVL insert*/
+avl_t *avl_insert(avl_t **tree, int value);
+/*array to AVL*/
+avl_t *array_to_avl(int *array, size_t size);
+/*AVL removal*/
+bst_t *bst_remove(bst_t *root, int value);
+/*Sorted array to AVL tree*/
+avl_t *sorted_array_to_avl(int *array, size_t size);
 
 
 #endif
