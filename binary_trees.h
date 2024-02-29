@@ -137,6 +137,7 @@ size_t binary_tree_size_heap(const binary_tree_t *tree);
 int helper_heap(const binary_tree_t *tree, size_t index, size_t size);
 /*function that checks if a binary tree is a valid Max Binary Heap*/
 int binary_tree_is_heap(const binary_tree_t *tree);
+void swap_nodes(heap_t *a, heap_t *b);
 /*function that inserts a value in Max Binary Heap*/
 heap_t *heap_insert(heap_t **root, int value);
 
