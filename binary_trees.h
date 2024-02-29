@@ -107,8 +107,13 @@ bst_t *bst_insert(bst_t **tree, int value);
 bst_t *array_to_bst(int *array, size_t size);
 /*function that searches for a value in a Binary Search Tree*/
 bst_t *bst_search(const bst_t *tree, int value);
+
+bst_t *bst_delete(bst_t *root, bst_t *node);
+bst_t *bst_remove_recursive(bst_t *root, bst_t *node, int value);
 /*function that removes a node from a Binary Search Tree*/
 bst_t *bst_remove(bst_t *root, int value);
+
+
 
 
 /*AVL Tree*/
