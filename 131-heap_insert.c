@@ -1,64 +1,142 @@
 #include "binary_trees.h"
 
 /**
- * heapify_up - Adjusts the Max Heap property upwards
- * @heap: A pointer to the root node of the heap
- * @node: A pointer to the inserted node
- *
- * Return: A pointer to the root node of the heap
+ * binary_tree_height - Function that measures the height of a binary tree
+ * @tree: tree to go through
+ * Return: the height
  */
-heap_t *heapify_up(heap_t **heap, heap_t *node)
+
+size_t binary_tree_height(const binary_tree_t *tree)
 {
-	int temp;
+	size_t l = 0;
+	size_t r = 0;
 
-	while (node->parent != NULL && node->n > node->parent->n)
+	if (tree == NULL)
 	{
-		temp = node->n;
-		node->n = node->parent->n;
-		node->parent->n = temp;
-		node = node->parent;
+		return (0);
 	}
-	if (node->parent == NULL)
-		*heap = node;
-
-	return (*heap);
+	else
+	{
+		if (tree->left == NULL && tree->right == NULL)
+			return (tree->parent != NULL);
+		if (tree)
+		{
+			l = tree->left ? 1 + binary_tree_height(tree->left) : 0;
+			r = tree->right ? 1 + binary_tree_height(tree->right) : 0;
+		}
+		return ((l > r) ? l : r);
+		}
 }
 
 /**
- * heap_insert - Inserts a value in a Max Binary Heap
- * @root: A double pointer to the root node of the Heap
- * @value: The value to store in the new node
- *
- * Return: A pointer to the created node, or NULL on failure
+ * binary_tree_balance - Measures balance factor of a binary tree
+ * @tree: tree to go through
+ * Return: balanced factor
  */
-heap_t *heap_insert(heap_t **root, int value)
+int binary_tree_balance(const binary_tree_t *tree)
 {
-	heap_t *new_node, *parent;
+	int right = 0, left = 0, total = 0;
 
-	if (root == NULL)
-		return (NULL);
+	if (tree)
+	{
+		left = ((int)binary_tree_height(tree->left));
+		right = ((int)binary_tree_height(tree->right));
+		total = left - right;
+	}
+	return (total);
+}
 
-	new_node = binary_tree_node(NULL, value);
-	if (new_node == NULL)
-		return (NULL);
-	if (*root == NULL)
+/**
+ * tree_is_perfect - function that says if a tree is perfect or not
+ * it has to be the same quantity of levels in left as right, and also
+ * each node has to have 2 nodes or none
+ * @tree: tree to check
+ * Return: 0 if is not a perfect or other number that is the level of height
+ */
+int tree_is_perfect(const binary_tree_t *tree)
+{
+	int l = 0, r = 0;
+
+	if (tree->left && tree->right)
 	{
-		*root = new_node;
-		return (new_node);
+		l = 1 + tree_is_perfect(tree->left);
+		r = 1 + tree_is_perfect(tree->right);
+		if (r == l && r != 0 && l != 0)
+			return (r);
+		return (0);
 	}
-	parent = *root;
-	while (parent->left != NULL && parent->right != NULL)
+	else if (!tree->left && !tree->right)
 	{
-		if (binary_tree_size(parent->left) <= binary_tree_size(parent->right))
-			parent = parent->left;
-		else
-			parent = parent->right;
+		return (1);
 	}
-	if (parent->left == NULL)
-		parent->left = new_node;
 	else
-		parent->right = new_node;
-	new_node->parent = parent;
+	{
+		return (0);
+	}
+}
 
-	return (heapify_up(root, new_node));
+/**
+ * binary_tree_is_perfect - perfect or not a tree
+ * @tree: tree to check
+ * Return: 1 is it is or 0 if not
+ */
+int binary_tree_is_perfect(const binary_tree_t *tree)
+{
+	int result = 0;
+
+	if (tree == NULL)
+	{
+		return (0);
+	}
+	else
+	{
+		result = tree_is_perfect(tree);
+		if (result != 0)
+		{
+			return (1);
+		}
+		return (0);
+	}
+}
+
+/**
+ * binary_tree_is_heap - checks if a binary tree is a valid Max Binary Heap
+ * @tree: tree to check
+ * Return: 1 is it is or 0 if not
+ */
+int binary_tree_is_heap(const binary_tree_t *tree)
+{
+	int bval;
+
+	if (tree == NULL)
+	{
+		return (0);
+	}
+	if (tree->left && tree->left->n > tree->n)
+	{
+		return (0);
+	}
+	if (tree->right && tree->right->n > tree->n)
+	{
+		return (0);
+	}
+	if (binary_tree_is_perfect(tree))
+	{
+		return (1);
+	}
+	bval = binary_tree_balance(tree);
+	if (bval == 0)
+	{
+		return (binary_tree_is_perfect(tree->left)
+			&& binary_tree_is_heap(tree->right));
+	}
+	if (bval == 1)
+	{
+		return (binary_tree_is_heap(tree->left)
+			&& binary_tree_is_perfect(tree->right));
+	}
+	else
+	{
+		return (0);
+	}
 }
