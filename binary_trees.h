@@ -118,8 +118,7 @@ bst_t *bst_remove(bst_t *root, int value);
 typedef struct binary_tree_s avl_t;
 /*function that checks if a binary tree is a valid AVL Tree*/
 int binary_tree_is_avl(const binary_tree_t *tree);
-/*Max Binary Heap*/
-typedef struct binary_tree_s heap_t;
+
 /*is AVL*/
 int binary_tree_is_avl(const binary_tree_t *tree);
 /*AVL insert*/
@@ -131,5 +130,9 @@ bst_t *bst_remove(bst_t *root, int value);
 /*Sorted array to AVL tree*/
 avl_t *sorted_array_to_avl(int *array, size_t size);
 
+/*Max Binary Heap*/
+typedef struct binary_tree_s heap_t;
+int node_max_value(const binary_tree_t *tree);
+int binary_tree_is_heap(const binary_tree_t *tree);
 
 #endif
