@@ -108,19 +108,17 @@ bst_t *bst_insert(bst_t **tree, int value);
 bst_t *array_to_bst(int *array, size_t size);
 /*function that searches for a value in a Binary Search Tree*/
 bst_t *bst_search(const bst_t *tree, int value);
-
+/*Deletes a node from a binary search tree*/
 bst_t *bst_delete(bst_t *root, bst_t *node);
+/*Removes a node from a binary search tree recursively*/
 bst_t *bst_remove_recursive(bst_t *root, bst_t *node, int value);
 /*function that removes a node from a Binary Search Tree*/
 bst_t *bst_remove(bst_t *root, int value);
-
-
-
-
 /*AVL Tree*/
 typedef struct binary_tree_s avl_t;
-/*Max Binary Heap*/
-typedef struct binary_tree_s heap_t;
+/*function that checks if a binary tree is a valid AVL Tree*/
+int binary_tree_is_avl(const binary_tree_t *tree);
+
 /*is AVL*/
 int binary_tree_is_avl(const binary_tree_t *tree);
 /*AVL insert*/
@@ -132,5 +130,13 @@ avl_t *avl_remove(avl_t *root, int value);
 /*Sorted array to AVL tree*/
 avl_t *sorted_array_to_avl(int *array, size_t size);
 
+/*Max Binary Heap*/
+typedef struct binary_tree_s heap_t;
+int node_max_value(const binary_tree_t *tree);
+/*function that checks if a binary tree is a valid Max Binary Heap*/
+int binary_tree_is_heap(const binary_tree_t *tree);
+heap_t *heapify_up(heap_t **heap, heap_t *node);
+/*function that inserts a value in Max Binary Heap*/
+heap_t *heap_insert(heap_t **root, int value);
 
 #endif
