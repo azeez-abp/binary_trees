@@ -17,7 +17,7 @@ size_t binary_tree_size_heap(const binary_tree_t *tree)
 	while (tree != NULL)
 	{
 		size++;
-		size += binary_tree_size(tree->left);
+		size += binary_tree_size_heap(tree->left);
 		tree = tree->right;
 	}
 
