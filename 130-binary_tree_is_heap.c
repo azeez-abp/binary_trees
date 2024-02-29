@@ -56,5 +56,6 @@ int binary_tree_is_heap(const binary_tree_t *tree)
 	if (bt_is_complete(tree, 0, node_count) &&
 			binary_tree_is_heap_util(tree))
 		return (1);
+
 	return (0);
 }
