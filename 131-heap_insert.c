@@ -7,8 +7,9 @@
  */
 void swap_nodes(heap_t *a, heap_t *b)
 {
-	int tmp = a->n;
+	int tmp;
 
+    tmp = a->n;
 	a->n = b->n;
 	b->n = tmp;
 }
