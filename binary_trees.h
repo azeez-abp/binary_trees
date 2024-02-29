@@ -133,6 +133,9 @@ avl_t *sorted_array_to_avl(int *array, size_t size);
 /*Max Binary Heap*/
 typedef struct binary_tree_s heap_t;
 int node_max_value(const binary_tree_t *tree);
+/*function that checks if a binary tree is a valid Max Binary Heap*/
 int binary_tree_is_heap(const binary_tree_t *tree);
+/*function that inserts a value in Max Binary Heap*/
+heap_t *heap_insert(heap_t **root, int value);
 
 #endif
