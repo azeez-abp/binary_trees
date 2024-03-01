@@ -144,6 +144,8 @@ heap_t *heap_insert(heap_t **root, int value);
 heap_t *array_to_heap(int *array, size_t size);
 /*Heap extract*/
 void heapify(heap_t *root);
+/*Extract heap*/
+int heap_extract(heap_t **root);
 /*heap to sorted array*/
 int *heap_to_sorted_array(heap_t *heap, size_t *size);
 
